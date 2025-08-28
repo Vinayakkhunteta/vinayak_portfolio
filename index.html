@@ -18,15 +18,16 @@
     }
     * { box-sizing: border-box; }
     html, body { height: 100%; }
-    body {
-      margin: 0;
-      font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      background: radial-gradient(1200px 800px at 20% -10%, rgba(88,119,255,0.25), transparent 60%),
-                  radial-gradient(900px 700px at 120% 10%, rgba(168,107,255,0.2), transparent 60%),
-                  var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-    }
+   body {
+  margin: 0;
+  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: 
+    radial-gradient(1200px 800px at 25% 10%, rgba(88,119,255,0.25), transparent 60%),
+    radial-gradient(900px 700px at 75% 30%, rgba(168,107,255,0.2), transparent 60%),
+    var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
     a { color: inherit; text-decoration: none; }
 
     /* ===== Header / Hero ===== */
@@ -83,15 +84,20 @@
     @media (min-width: 700px){ .grid.cols-2 { grid-template-columns: repeat(2, 1fr); } }
     @media (min-width: 1000px){ .grid.cols-3 { grid-template-columns: repeat(3, 1fr); } }
 
-    /* ===== 3D Cards (interactive) ===== */
+    /* ===== 3D Cards (fixed background) ===== */
     .card {
-      position: relative; border-radius: 18px; padding: 22px; background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+      position: relative; border-radius: 18px; padding: 22px; 
+      background: rgba(15,20,38,0.9); /* solid dark */
       border: 1px solid rgba(255,255,255,0.1);
       box-shadow: 0 10px 30px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.05);
-      transform-style: preserve-3d; transition: transform .25s ease, box-shadow .25s ease, background .25s ease;
+      transform-style: preserve-3d; 
+      transition: transform .25s ease, box-shadow .25s ease, background .25s ease;
       will-change: transform;
     }
-    .card:hover { box-shadow: 0 18px 50px rgba(0,0,0,.5), 0 8px 24px rgba(91,156,255,.18); background: linear-gradient(180deg, rgba(91,156,255,0.08), rgba(168,107,255,0.06)); }
+    .card:hover { 
+      box-shadow: 0 18px 50px rgba(0,0,0,.5), 0 8px 24px rgba(91,156,255,.18); 
+      background: rgba(20,30,50,0.95); /* subtle hover */
+    }
     .card .card-title { font-weight: 700; margin: 0 0 8px; color: #dbe4ff; }
     .card .card-sub { color: var(--muted); font-size: 0.95rem; margin-bottom: 10px; }
     .chip { display: inline-block; font-size: 12px; padding: 6px 10px; border-radius: 999px; margin: 6px 6px 0 0; color: #cfe3ff; background: linear-gradient(135deg, rgba(91,156,255,.22), rgba(168,107,255,.22)); border: 1px solid rgba(255,255,255,.12); }
@@ -114,7 +120,7 @@
   <!-- ===== Hero / Header ===== -->
   <header class="hero">
     <h1 class="title">Vinayak Khunteta</h1>
-    <p class="tagline">Computer Applications Graduate • AI/ML & Full‑Stack • UX/UI Enthusiast</p>
+    <p class="tagline">Computer Applications Graduate • AI/ML & Full-Stack • UX/UI Enthusiast</p>
     <div class="cta-row">
       <a class="btn primary" href="Vinayak Khunteta-Resume.pdf" download>
         <i class="fa-solid fa-download"></i> Download Resume
@@ -140,7 +146,7 @@
     <h2 class="section-title">About Me</h2>
     <div class="underline"></div>
     <div class="card tilt" data-tilt>
-      <p>Hi! I'm Vinayak, an MCA student passionate about AI, ML, and full‑stack development. I love building things that solve real user problems using Java, Python, and modern web tech. I'm constantly learning and improving my craft with a focus on usability and performance.</p>
+      <p>Hi! I'm Vinayak, an MCA student passionate about AI, ML, and full-stack development. I love building things that solve real user problems using Java, Python, and modern web tech. I'm constantly learning and improving my craft with a focus on usability and performance.</p>
     </div>
   </section>
 
@@ -188,12 +194,12 @@
     <div class="underline"></div>
     <div class="grid cols-3">
       <div class="card tilt" data-tilt>
-        <h3 class="card-title">AI Chat‑Bot</h3>
+        <h3 class="card-title">AI Chat-Bot</h3>
         <p class="card-sub">Java • NetBeans • Swing</p>
         <p>Modular desktop chatbot with file handling and pluggable intents.</p>
       </div>
       <div class="card tilt" data-tilt>
-        <h3 class="card-title">To‑Do List App</h3>
+        <h3 class="card-title">To-Do List App</h3>
         <p class="card-sub">Python • Tkinter</p>
         <p>Task manager with save/load, keyboard shortcuts, and clean UI.</p>
       </div>
@@ -205,7 +211,7 @@
       <div class="card tilt" data-tilt>
         <h3 class="card-title">Facebook Clone</h3>
         <p class="card-sub">HTML • CSS • JS</p>
-        <p>Responsive front‑end clone with interactive UI components.</p>
+        <p>Responsive front-end clone with interactive UI components.</p>
       </div>
       <div class="card tilt" data-tilt>
         <h3 class="card-title">Car Rental Website</h3>
@@ -222,38 +228,37 @@
 
   <!-- ===== UX/UI Design Projects ===== -->
   <section id="uxui">
-  <h2 class="section-title">UX/UI Design Projects</h2>
-  <div class="underline"></div>
-  <div class="grid cols-2">
-    <div class="card tilt" data-tilt>
-      <h3 class="card-title">Car Rental Website</h3>
-      <p class="card-sub">Group Project | [January, 2024]</p>
-      <p>Built front-end and styled using Bootstrap for responsive design. Used MySQL for storing data on users and cars with the help of PHP MyAdminPannel.</p>
-      <div>
-        <span class="chip">Bootstrap</span><span class="chip">Responsive</span><span class="chip">MySQL</span>
+    <h2 class="section-title">UX/UI Design Projects</h2>
+    <div class="underline"></div>
+    <div class="grid cols-3">
+      <div class="card tilt" data-tilt>
+        <h3 class="card-title">Car Rental Website</h3>
+        <p class="card-sub">Group Project | [January, 2024]</p>
+        <p>Built front-end and styled using Bootstrap for responsive design. Used MySQL for storing data on users and cars with the help of PHP MyAdminPannel.</p>
+        <div>
+          <span class="chip">Bootstrap</span><span class="chip">Responsive</span><span class="chip">MySQL</span>
+        </div>
+      </div>
+
+      <div class="card tilt" data-tilt>
+        <h3 class="card-title">Hotstar Clone UI</h3>
+        <p class="card-sub">Web Project | [April, 2025]</p>
+        <p>Designed with HTML, CSS, JavaScript for a realistic streaming experience. Added slideshow, categories, search functionality, and multi-page navigation.</p>
+        <div>
+          <span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">JavaScript</span>
+        </div>
+      </div>
+
+      <div class="card tilt" data-tilt>
+        <h3 class="card-title">Netflix Clone UI</h3>
+        <p class="card-sub">Web Project | [April, 2025]</p>
+        <p>Responsive design with hero banner, FAQ section, device compatibility pages. Interactive elements: FAQ toggles, kids’ profile section, hover animations.</p>
+        <div>
+          <span class="chip">Responsive</span><span class="chip">Interactive</span><span class="chip">UI/UX</span>
+        </div>
       </div>
     </div>
-
-    <div class="card tilt" data-tilt>
-      <h3 class="card-title">Hotstar Clone UI</h3>
-      <p class="card-sub">Web Project | [April, 2025]</p>
-      <p>Designed with HTML, CSS, JavaScript for a realistic streaming experience. Added slideshow, categories, search functionality, and multi-page navigation.</p>
-      <div>
-        <span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">JavaScript</span>
-      </div>
-    </div>
-
-    <div class="card tilt" data-tilt>
-      <h3 class="card-title">Netflix Clone UI</h3>
-      <p class="card-sub">Web Project | [April, 2025]</p>
-      <p>Responsive design with hero banner, FAQ section, device compatibility pages. Interactive elements: FAQ toggles, kids’ profile section, hover animations.</p>
-      <div>
-        <span class="chip">Responsive</span><span class="chip">Interactive</span><span class="chip">UI/UX</span>
-      </div>
-    </div>
-  </div>
-</section>
-
+  </section>
 
   <!-- ===== Certifications ===== -->
   <section id="certifications">
@@ -289,32 +294,31 @@
     © 2025 Vinayak Khunteta. All rights reserved.
   </footer>
 
-  <script>
-    // Vanilla tilt effect (no libraries, no TypeScript)
+    <script>
+    // Vanilla tilt effect
     const clamp = (num, min, max) => Math.min(Math.max(num, min), max);
 
     document.querySelectorAll('[data-tilt]').forEach((card) => {
-      const damp = 20; // higher = slower tilt
-      const maxRotate = 8; // deg
+      const maxRotate = 8; // degrees
 
       function handleMove(e) {
         const rect = card.getBoundingClientRect();
-        const px = (e.clientX - rect.left) / rect.width;   // 0..1
-        const py = (e.clientY - rect.top) / rect.height;  // 0..1
-        const rotY = clamp((px - 0.5) * 2 * maxRotate, -maxRotate, maxRotate);
-        const rotX = clamp((0.5 - py) * 2 * maxRotate, -maxRotate, maxRotate);
-        card.style.transform = `perspective(900px) rotateX(${rotX}deg) rotateY(${rotY}deg)`;
+        const px = (e.clientX - rect.left) / rect.width;
+        const py = (e.clientY - rect.top) / rect.height;
+
+        // Map mouse position to rotation
+        const xRot = clamp((0.5 - py) * maxRotate * 2, -maxRotate, maxRotate);
+        const yRot = clamp((px - 0.5) * maxRotate * 2, -maxRotate, maxRotate);
+
+        card.style.transform = `rotateX(${xRot}deg) rotateY(${yRot}deg) scale(1.02)`;
       }
 
-      function reset() {
-        card.style.transform = "perspective(900px) rotateX(0deg) rotateY(0deg)";
+      function resetTilt() {
+        card.style.transform = "rotateX(0deg) rotateY(0deg) scale(1)";
       }
 
-      card.addEventListener('mousemove', handleMove);
-      card.addEventListener('mouseleave', reset);
-      card.addEventListener('mouseenter', () => {
-        card.style.transition = 'transform .08s ease';
-      });
+      card.addEventListener("mousemove", handleMove);
+      card.addEventListener("mouseleave", resetTilt);
     });
   </script>
 </body>
