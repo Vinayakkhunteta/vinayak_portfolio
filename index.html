@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vinayak Khunteta | Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #0b0e1a;
+      --card: #0f1426;
+      --text: #e6e9f5;
+      --muted: #a7b0c3;
+      --grad-1: #5b9cff;
+      --grad-2: #a86bff;
+      --accent: #ff6a3d;
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: radial-gradient(1200px 800px at 20% -10%, rgba(88,119,255,0.25), transparent 60%),
+                  radial-gradient(900px 700px at 120% 10%, rgba(168,107,255,0.2), transparent 60%),
+                  var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+
+    /* ===== Header / Hero ===== */
+    header.hero {
+      position: relative;
+      padding: 80px 20px 60px;
+      text-align: center;
+      overflow: hidden;
+      background: linear-gradient(135deg, rgba(91,156,255,0.15), rgba(168,107,255,0.15));
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .hero .title {
+      font-size: clamp(32px, 6vw, 56px);
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      background: linear-gradient(90deg, var(--grad-1), var(--grad-2));
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+      text-shadow: 0 10px 30px rgba(91,156,255,0.35);
+      margin: 0 0 10px;
+    }
+    .hero .tagline { color: var(--muted); margin: 0 0 20px; font-weight: 600; }
+    .cta-row { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 12px 20px; border-radius: 14px; font-weight: 700;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+      transition: transform .25s ease, box-shadow .25s ease, filter .25s ease;
+      will-change: transform;
+    }
+    .btn.primary {
+      background: linear-gradient(135deg, var(--accent), #ff2481);
+      color: #fff; box-shadow: 0 8px 0 #b22b55, 0 12px 24px rgba(255,90,90,.35);
+    }
+    .btn.primary:hover { transform: translateY(-4px) scale(1.03); box-shadow: 0 12px 0 #932246, 0 18px 36px rgba(255,90,90,.45); }
+    .btn.ghost { background: rgba(255,255,255,0.06); color: var(--text); border: 1px solid rgba(255,255,255,0.12); }
+    .btn.ghost:hover { transform: translateY(-3px); box-shadow: 0 10px 24px rgba(91,156,255,.2); filter: brightness(1.1); }
+
+    /* ===== Nav (sticky) ===== */
+    nav.sticky {
+      position: sticky; top: 0; z-index: 50; backdrop-filter: blur(8px);
+      background: rgba(11,14,26,0.6);
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+    .nav-inner { max-width: 1100px; margin: 0 auto; padding: 12px 18px; display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    .nav-link { padding: 8px 14px; border-radius: 10px; color: var(--muted); font-weight: 600; transition: .25s; }
+    .nav-link:hover { color: #fff; background: linear-gradient(135deg, rgba(91,156,255,.18), rgba(168,107,255,.18)); box-shadow: 0 8px 20px rgba(0,0,0,.25); transform: translateY(-2px); }
+
+    /* ===== Sections & Grid ===== */
+    section { max-width: 1100px; margin: 0 auto; padding: 56px 18px; }
+    h2.section-title { font-size: clamp(22px, 3vw, 30px); margin: 0 0 18px; }
+    .underline { width: 70px; height: 3px; border-radius: 3px; background: linear-gradient(90deg, var(--grad-1), var(--grad-2)); margin-bottom: 26px; }
+
+    .grid { display: grid; gap: 18px; }
+    @media (min-width: 700px){ .grid.cols-2 { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 1000px){ .grid.cols-3 { grid-template-columns: repeat(3, 1fr); } }
+
+    /* ===== 3D Cards (interactive) ===== */
+    .card {
+      position: relative; border-radius: 18px; padding: 22px; background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+      border: 1px solid rgba(255,255,255,0.1);
+      box-shadow: 0 10px 30px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.05);
+      transform-style: preserve-3d; transition: transform .25s ease, box-shadow .25s ease, background .25s ease;
+      will-change: transform;
+    }
+    .card:hover { box-shadow: 0 18px 50px rgba(0,0,0,.5), 0 8px 24px rgba(91,156,255,.18); background: linear-gradient(180deg, rgba(91,156,255,0.08), rgba(168,107,255,0.06)); }
+    .card .card-title { font-weight: 700; margin: 0 0 8px; color: #dbe4ff; }
+    .card .card-sub { color: var(--muted); font-size: 0.95rem; margin-bottom: 10px; }
+    .chip { display: inline-block; font-size: 12px; padding: 6px 10px; border-radius: 999px; margin: 6px 6px 0 0; color: #cfe3ff; background: linear-gradient(135deg, rgba(91,156,255,.22), rgba(168,107,255,.22)); border: 1px solid rgba(255,255,255,.12); }
+
+    /* Lists */
+    ul.clean { list-style: none; padding: 0; margin: 0; }
+    ul.clean li { position: relative; padding-left: 20px; margin: 8px 0; color: #cbd5f1; }
+    ul.clean li::before { content: "▹"; position: absolute; left: 0; top: 0; color: var(--grad-1); }
+
+    /* Footer */
+    footer { text-align: center; padding: 40px 18px; color: var(--muted); border-top: 1px solid rgba(255,255,255,.06); }
+
+    /* Motion reduce */
+    @media (prefers-reduced-motion: reduce) {
+      .btn, .card { transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <!-- ===== Hero / Header ===== -->
+  <header class="hero">
+    <h1 class="title">Vinayak Khunteta</h1>
+    <p class="tagline">Computer Applications Graduate • AI/ML & Full‑Stack • UX/UI Enthusiast</p>
+    <div class="cta-row">
+      <a class="btn primary" href="C:\Users\vinayak khunteta\.vscode\html\Vinayak Khunteta.pdf" download>
+        <i class="fa-solid fa-download"></i> Download Resume
+      </a>
+      <a class="btn ghost" href="#projects"><i class="fa-solid fa-rocket"></i> View Projects</a>
+    </div>
+  </header>
+
+  <!-- ===== Sticky Nav ===== -->
+  <nav class="sticky">
+    <div class="nav-inner">
+      <a class="nav-link" href="#about">About</a>
+      <a class="nav-link" href="#skills">Skills</a>
+      <a class="nav-link" href="#projects">Projects</a>
+      <a class="nav-link" href="#uxui">UX/UI Designs</a>
+      <a class="nav-link" href="#certifications">Certifications</a>
+      <a class="nav-link" href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <!-- ===== About ===== -->
+  <section id="about">
+    <h2 class="section-title">About Me</h2>
+    <div class="underline"></div>
+    <div class="card tilt" data-tilt>
+      <p>Hi! I'm Vinayak, an MCA student passionate about AI, ML, and full‑stack development. I love building things that solve real user problems using Java, Python, and modern web tech. I'm constantly learning and improving my craft with a focus on usability and performance.</p>
+    </div>
+  </section>
+
+  <!-- ===== Skills ===== -->
+  <section id="skills">
+    <h2 class="section-title">Skills</h2>
+    <div class="underline"></div>
+    <div class="grid cols-2">
+      <div class="card tilt" data-tilt>
+        <h3 class="card-title">Languages</h3>
+        <ul class="clean">
+          <li>Java, Python, C++</li>
+          <li>HTML, CSS, JavaScript</li>
+        </ul>
+      </div>
+      <div class="card tilt" data-tilt>
+        <h3 class="card-title">Frameworks & Tools</h3>
+        <ul class="clean">
+          <li>NetBeans, Tkinter, Bootstrap, Photoshop, Figma</li>
+          <li>Git / GitHub, VS Code</li>
+        </ul>
+      </div>
+      <div class="card tilt" data-tilt>
+        <h3 class="card-title">Databases</h3>
+        <ul class="clean">
+          <li>MySQL, phpMyAdmin</li>
+          <li>SQL Workbench</li>
+        </ul>
+      </div>
+      <div class="card tilt" data-tilt>
+        <h3 class="card-title">Concepts</h3>
+        <div>
+          <span class="chip">OOP</span>
+          <span class="chip">DSA</span>
+          <span class="chip">File Handling</span>
+          <span class="chip">Responsive Design</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Projects ===== -->
+  <section id="projects">
+    <h2 class="section-title">Projects</h2>
+    <div class="underline"></div>
+    <div class="grid cols-3">
+      <div class="card tilt" data-tilt>
+        <h3 class="card-title">AI Chat‑Bot</h3>
+        <p class="card-sub">Java • NetBeans • Swing</p>
+        <p>Modular desktop chatbot with file handling and pluggable intents.</p>
+      </div>
+      <div class="card tilt" data-tilt>
+        <h3 class="card-title">To‑Do List App</h3>
+        <p class="card-sub">Python • Tkinter</p>
+        <p>Task manager with save/load, keyboard shortcuts, and clean UI.</p>
+      </div>
+      <div class="card tilt" data-tilt>
+        <h3 class="card-title">Online Quiz System</h3>
+        <p class="card-sub">PHP • MySQL • phpMyAdmin</p>
+        <p>Timed quizzes, scoring, admin panel, and result analytics.</p>
+      </div>
+      <div class="card tilt" data-tilt>
+        <h3 class="card-title">Facebook Clone</h3>
+        <p class="card-sub">HTML • CSS • JS</p>
+        <p>Responsive front‑end clone with interactive UI components.</p>
+      </div>
+      <div class="card tilt" data-tilt>
+        <h3 class="card-title">Car Rental Website</h3>
+        <p class="card-sub">PHP • MySQL • Bootstrap</p>
+        <p>User & vehicle management, responsive UI, and booking flow.</p>
+      </div>
+      <div class="card tilt" data-tilt>
+        <h3 class="card-title">Job Recommendation System</h3>
+        <p class="card-sub">ML • Python</p>
+        <p>Recommends roles based on profile, skills, and historical data.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== UX/UI Design Projects ===== -->
+  <section id="uxui">
+    <h2 class="section-title">UX/UI Design Projects</h2>
+    <div class="underline"></div>
+    <div class="grid cols-2">
+      <div class="card tilt" data-tilt>
+        <h3 class="card-title">E‑Commerce App UI</h3>
+        <p class="card-sub">Wireframes → High‑fidelity</p>
+        <p>Focus on discoverability, clean product cards, and frictionless checkout. Designed dark & light themes.</p>
+        <div>
+          <span class="chip">Design System</span><span class="chip">Accessibility</span><span class="chip">Micro‑interactions</span>
+        </div>
+      </div>
+      <div class="card tilt" data-tilt>
+        <h3 class="card-title">Travel Booking Dashboard</h3>
+        <p class="card-sub">Responsive Web UI</p>
+        <p>Search, filter, and itinerary builder with visual hierarchy and clear CTAs. Emphasis on glanceable stats.</p>
+        <div>
+          <span class="chip">Card Layout</span><span class="chip">Charts</span><span class="chip">Empty States</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Certifications ===== -->
+  <section id="certifications">
+    <h2 class="section-title">Certifications</h2>
+    <div class="underline"></div>
+    <div class="grid cols-2">
+      <div class="card tilt" data-tilt>
+        <ul class="clean">
+          <li>IBM Java Certificate (Coursera)</li>
+          <li>Intro to OOP with Java (Coursera)</li>
+          <li>Machine Learning with Python (IBM via Coursera)</li>
+          <li>Python for Data Science, AI & Development (IBM via Coursera)</li>
+          <li>Inter College Hackathon – Participant</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Contact ===== -->
+  <section id="contact">
+    <h2 class="section-title">Contact</h2>
+    <div class="underline"></div>
+    <div class="grid">
+      <div class="card tilt" data-tilt>
+        <p>Email: <a href="mailto:vinayak7khunteta@gmail.com">vinayak7khunteta@gmail.com</a></p>
+        <p>Phone: +91 7878409036</p>
+        <p>LinkedIn: <a href="https://in.linkedin.com/in/vinayak-khunteta-0959aa1b5" target="_blank" rel="noreferrer noopener">vinayak-khunteta</a></p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 Vinayak Khunteta. All rights reserved.
+  </footer>
+
+  <script>
+    // Vanilla tilt effect (no libraries, no TypeScript)
+    const clamp = (num, min, max) => Math.min(Math.max(num, min), max);
+
+    document.querySelectorAll('[data-tilt]').forEach((card) => {
+      const damp = 20; // higher = slower tilt
+      const maxRotate = 8; // deg
+
+      function handleMove(e) {
+        const rect = card.getBoundingClientRect();
+        const px = (e.clientX - rect.left) / rect.width;   // 0..1
+        const py = (e.clientY - rect.top) / rect.height;  // 0..1
+        const rotY = clamp((px - 0.5) * 2 * maxRotate, -maxRotate, maxRotate);
+        const rotX = clamp((0.5 - py) * 2 * maxRotate, -maxRotate, maxRotate);
+        card.style.transform = `perspective(900px) rotateX(${rotX}deg) rotateY(${rotY}deg)`;
+      }
+
+      function reset() {
+        card.style.transform = "perspective(900px) rotateX(0deg) rotateY(0deg)";
+      }
+
+      card.addEventListener('mousemove', handleMove);
+      card.addEventListener('mouseleave', reset);
+      card.addEventListener('mouseenter', () => {
+        card.style.transition = 'transform .08s ease';
+      });
+    });
+  </script>
+</body>
+</html>
