@@ -810,7 +810,390 @@ grid-template-columns:1fr;
 }
 
 }
+/* ===================================
+        MOBILE RESPONSIVE
+=================================== */
 
+@media screen and (max-width:991px){
+
+header{
+
+padding:15px 5%;
+flex-direction:column;
+gap:15px;
+
+}
+
+nav{
+
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:10px;
+
+}
+
+nav a{
+
+margin:0;
+font-size:15px;
+
+}
+
+.hero{
+
+padding:120px 5% 70px;
+height:auto;
+min-height:100vh;
+
+}
+
+.hero h1{
+
+font-size:48px;
+
+}
+
+.hero h3{
+
+font-size:22px;
+
+}
+
+.hero p{
+
+font-size:18px;
+
+}
+
+.hero-btns{
+
+flex-direction:column;
+align-items:center;
+
+}
+
+.btn{
+
+width:230px;
+justify-content:center;
+
+}
+
+.about-grid,
+.skills-grid,
+.project-grid,
+.education-grid,
+.certificate-grid,
+.contact-container,
+.stats-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.timeline-item{
+
+flex-direction:column;
+align-items:center;
+text-align:center;
+
+}
+
+.timeline-icon{
+
+margin-bottom:20px;
+
+}
+
+.info{
+
+grid-template-columns:1fr;
+
+}
+
+.contact-item{
+
+align-items:flex-start;
+
+}
+
+}
+
+/* ===============================
+       MOBILE (768px)
+================================ */
+
+@media screen and (max-width:768px){
+
+.section-title{
+
+font-size:34px;
+
+}
+
+.line{
+
+margin-bottom:40px;
+
+}
+
+section{
+
+padding:80px 20px;
+
+}
+
+.hero h1{
+
+font-size:38px;
+
+}
+
+.hero p{
+
+font-size:17px;
+
+}
+
+.about-card,
+.skill-card,
+.project-card,
+.edu-card,
+.certificate-card,
+.contact-info,
+.contact-form,
+.stat-card{
+
+padding:25px;
+
+}
+
+.project-icon{
+
+width:60px;
+height:60px;
+font-size:24px;
+
+}
+
+.project-tags span,
+.skill-tags span,
+.tags span{
+
+padding:7px 14px;
+font-size:13px;
+
+}
+
+.contact-item{
+
+flex-direction:column;
+text-align:center;
+align-items:center;
+
+}
+
+.social-links{
+
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:12px;
+
+}
+
+footer{
+
+padding:40px 20px;
+
+}
+
+}
+
+/* ==========================
+        SMALL PHONES
+========================== */
+
+@media screen and (max-width:480px){
+
+header{
+
+padding:12px;
+
+}
+
+.logo{
+
+font-size:24px;
+
+}
+
+nav{
+
+gap:8px;
+
+}
+
+nav a{
+
+font-size:13px;
+padding:6px 10px;
+
+}
+
+.hero{
+
+padding-top:130px;
+
+}
+
+.hero h1{
+
+font-size:30px;
+line-height:1.2;
+
+}
+
+.hero h3{
+
+font-size:18px;
+
+}
+
+.hero p{
+
+font-size:15px;
+
+}
+
+.btn{
+
+width:100%;
+max-width:260px;
+padding:14px;
+
+}
+
+.section-title{
+
+font-size:28px;
+
+}
+
+.about-card,
+.skill-card,
+.project-card,
+.edu-card,
+.certificate-card,
+.contact-info,
+.contact-form,
+.stat-card{
+
+padding:20px;
+
+}
+
+.project-card h2{
+
+font-size:22px;
+
+}
+
+.project-card h4{
+
+font-size:15px;
+
+}
+
+.project-card p{
+
+font-size:14px;
+
+}
+
+.info h4{
+
+font-size:15px;
+
+}
+
+.info span{
+
+font-size:12px;
+
+}
+
+.contact-form input,
+.contact-form textarea{
+
+padding:14px;
+font-size:15px;
+
+}
+
+.social-links a{
+
+width:45px;
+height:45px;
+font-size:18px;
+
+}
+
+.stat-card h2{
+
+font-size:40px;
+
+}
+
+.stat-card p{
+
+font-size:15px;
+
+}
+
+}
+
+/* ==========================
+      IMAGE RESPONSIVE
+========================== */
+
+img{
+
+max-width:100%;
+height:auto;
+display:block;
+
+}
+
+/* ==========================
+     PREVENT HORIZONTAL SCROLL
+========================== */
+
+html,
+body{
+
+overflow-x:hidden;
+
+}
+
+/* ==========================
+      FLEXIBLE CONTAINERS
+========================== */
+
+.container,
+.hero-content,
+.about-grid,
+.skills-grid,
+.project-grid,
+.education-grid,
+.contact-container{
+
+width:100%;
+max-width:1200px;
+margin:auto;
+
+}
 
 
 
